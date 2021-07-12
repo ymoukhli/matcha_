@@ -1,0 +1,17 @@
+.nav {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 25% 50% 1fr;
+    /* justify-content: space-between; */
+    /* align-items: center; */
+    padding: 1em;
+    composes: ShadowBottom from './effects.module.css';
+
+}
+
+.text {
+    grid-column: 2;
+    justify-self: center;
+    /* border: 1px black solid; */
+    /* background-color: red; */
+}

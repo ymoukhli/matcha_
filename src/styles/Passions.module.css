@@ -1,0 +1,14 @@
+.root {
+    composes: normal from './buttons.module.css';
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(90px,1fr));
+    grid-gap: 0.4em;
+    /* flex-wrap: wrap; */
+}
+.normal {
+    background-color: rebeccapurple;
+    composes: normal from './buttons.module.css';
+    font-size: 10px;
+    margin: 0 1em;
+    text-align: center;
+}

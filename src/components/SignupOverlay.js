@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import button from '../styles/buttons.module.css'
 import input from '../styles/inputs.module.css'
 import style from '../styles/styles.module.css'
-import login from '../styles/loginOverlay.module.css'
+import signin from '../styles/signupOverlay.module.css'
 
 function onClickOutside(e, props)
 {
@@ -11,7 +11,7 @@ function onClickOutside(e, props)
     props.onClick(false);
 }
 
-export const LoginOverlay = function(props) {
+export const SignupOverlay = function(props) {
 
     let [message, SetMessage] = useState("");
     let [userError, SetuserError] = useState(false);
@@ -61,27 +61,36 @@ export const LoginOverlay = function(props) {
     }
 
 
-    return (<div className={login.loginContainer} id="log" onClick={(e) => { onClickOutside(e, props)}}>
-          <div className={login.loginOverlay}>
-          <button className={login.backBtn} onClick={() => props.onClick(false)}>X</button>
-          <div className={login.Center}>
+    return (<div className={signin.Container} id="log" onClick={(e) => { onClickOutside(e, props)}}>
+          <div className={signin.Overlay}>
+          <button className={signin.backBtn} onClick={() => props.onClick(false)}>X</button>
+          <div className={signin.Center}>
           {userError && <div className={style.error}>{message}</div>}
           {passError && <div className={style.error}>{message}</div>}
-          <h2>Log in</h2>
-          <form className={login.form} id="loginForm" method="Post" onSubmit={(e) => validateForm(e)}>
+          <h2 className={signin.h2}>Create your account</h2>
+          <form className={signin.Center} id="loginForm" method="Post" onSubmit={(e) => validateForm(e)}>
 
-              <label htmlFor="userName">user name</label><br/>
-              <input className={input.normal} type="text" id="userName" name="userName" placeholder="user name" required={true}></input><br/>
+              <label className={signin.label} htmlFor="firstName">first name</label>
+              <input className={signin.input} type="text" id="firstName" name="firstName" placeholder="first name" required={true}></input><br/>
 
-              <label htmlFor="passWord">password</label><br/>
-              <input className={input.normal} type="password" id="passWord" name="passWord" placeholder="password" required={true}></input>
+              <label className={signin.label}  htmlFor="lastName">last name</label>
+              <input className={signin.input} type="text" id="lastName" name="lastName" placeholder="last name" required={true}></input><br/>
+
+              <label className={signin.label}  htmlFor="userName">user name</label>
+              <input className={signin.input} type="text" id="userName" name="userName" placeholder="user name" required={true}></input><br/>
+
+
+              <label className={signin.label}  htmlFor="email">email</label>
+              <input className={signin.input} type="email" id="email" name="email" placeholder="email" required={true}></input><br/>
+
+              <label className={signin.label}  htmlFor="passWord">password</label>
+              <input className={signin.input} type="password" id="passWord" name="passWord" placeholder="password" required={true}></input>
               <br/>
-              <button className={button.normal} type="submit">log in</button>
+              <button className={button.normal} type="submit">Create</button>
           </form>
-        </div>
-      </div>
-
-    </div>);
+          </div>
+          </div>
+        </div>);
 }
 
-export default LoginOverlay;
+export default SignupOverlay;

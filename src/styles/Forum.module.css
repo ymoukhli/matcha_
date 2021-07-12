@@ -1,0 +1,12 @@
+/* select controlled in app*/
+
+.root {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    margin: 2em 1em;
+}

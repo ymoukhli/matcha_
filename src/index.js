@@ -4,10 +4,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { Nav } from './components/Nav';
+import Forum from './routes/Forum.js';
+// <App />
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+   <Forum>test</Forum>
   </React.StrictMode>,
   document.getElementById('root')
 );

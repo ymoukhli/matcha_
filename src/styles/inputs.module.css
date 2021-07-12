@@ -1,0 +1,28 @@
+.normal {
+  background: #FFFFFF;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  text-align: center;
+  padding: 1em 2em;
+  border-radius: 26px;
+  margin: 1em;
+  transition:0.3s cubic-bezier(.06,1.07,.42,1.11);
+}
+
+.normal:hover 
+{
+    transform: scale(1.08);
+}
+
+.normal:focus-visible {
+  outline: 0;
+  border: 1px solid #533f3f;
+    transform: scale(1.08);
+    border-radius: 10px;
+}
+
+.small {
+    composes: normal;
+    font-size: smaller;
+    padding: 0.4em 0.8em;
+}

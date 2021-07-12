@@ -1,0 +1,29 @@
+.root {
+    margin: 0 auto;
+    margin-top: 2em;
+    width: 80%;
+    /* border: 1px black solid; */
+    display: flex;
+    flex-direction: column;
+}
+
+.main {
+    width: 80%;
+    max-width: 300px;
+    border-radius: 5px;
+    margin: 0 auto;
+}
+
+.normalRoot{
+    margin-top: 1em;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+     grid-gap: 10px 5%;
+}
+
+.normal {
+    margin: 2px;
+    border-radius: 10px;
+    align-self: stretch;
+    object-fit: cover;
+}
