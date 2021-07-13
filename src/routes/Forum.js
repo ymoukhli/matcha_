@@ -11,6 +11,7 @@ const passions = (e) => {
     e.preventDefault()
     console.log('yey')
 }
+// <button className={button.normal} onClick={passions} id="passionButton">passions</button>
 export const Forum = () => {
     
     return (
@@ -20,7 +21,6 @@ export const Forum = () => {
             <form className={forum.form} id="infoForm">
                 <Select options={gender} label="select gender:"/>
                 <Select options={gender} label="gender preference : "/>
-                <button className={button.normal} onClick={passions} id="passionButton">passions</button>
                 <Passions/>
                 <label htmlFor="bio">biography</label>
                 <textarea id="bio" rows="4"></textarea>
