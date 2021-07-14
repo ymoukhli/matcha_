@@ -4,14 +4,10 @@ import button from '../styles/buttons.module.css'
 import forum from '../styles/Forum.module.css'
 import Select from '../components/Select.js'
 import Passions from '../components/Passions.js'
+import TextArea from '../components/TextArea.js'
 
 let gender = ['male', 'female', 'bitchs and stuff']
 
-const passions = (e) => {
-    e.preventDefault()
-    console.log('yey')
-}
-// <button className={button.normal} onClick={passions} id="passionButton">passions</button>
 export const Forum = () => {
     
     return (
@@ -22,8 +18,7 @@ export const Forum = () => {
                 <Select options={gender} label="select gender:"/>
                 <Select options={gender} label="gender preference : "/>
                 <Passions/>
-                <label htmlFor="bio">biography</label>
-                <textarea id="bio" rows="4"></textarea>
+                <TextArea/>
             </form>
         </div>
     )

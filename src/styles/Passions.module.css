@@ -6,11 +6,11 @@
     justify-content: center;
     grid-gap: 1em;
     margin: 1em auto;
-
+    /* text-align: center; */
     /* flex-wrap: wrap; */
 }
 .root {
-    text-align: center;
+    /* text-align: center; */
     transition: 10s;
 }
 .normal {

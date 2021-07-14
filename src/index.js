@@ -6,11 +6,12 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Nav } from './components/Nav';
 import Forum from './routes/Forum.js';
+import EditInfo from './routes/EditInfo.js';
 // <App />
 
 ReactDOM.render(
   <React.StrictMode>
-   <Forum>test</Forum>
+   <EditInfo>test</EditInfo>
   </React.StrictMode>,
   document.getElementById('root')
 );

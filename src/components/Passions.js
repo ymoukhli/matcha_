@@ -50,7 +50,7 @@ export const Passions = () => {
    
     if (currentPassions.length < 1)
     {
-        currentPassionsDisplay = (<div className={button.normal} onClick={Funy}> pick your passion tags </div>);
+        currentPassionsDisplay = (<div className={passions.currents} onClick={Funy}> pick your passion tags </div>);
     }
     else
     {
