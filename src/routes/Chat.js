@@ -2,7 +2,7 @@ import chat from '../styles/Chat.module.css';
 
 export const Chat = () => {
 
-    
+
     const HandelMessage = (e) => {
         e.preventDefault();
     }
@@ -15,7 +15,7 @@ export const Chat = () => {
                 </div>
             </form>
         </div>
-    )
+        )
 }
 
 export default Chat;
