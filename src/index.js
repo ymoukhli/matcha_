@@ -7,11 +7,12 @@ import reportWebVitals from './reportWebVitals';
 import { Nav } from './components/Nav';
 import Forum from './routes/Forum.js';
 import EditInfo from './routes/EditInfo.js';
+import Chat from './routes/Chat.js';
 // <App />
 
 ReactDOM.render(
   <React.StrictMode>
-   <EditInfo>test</EditInfo>
+   <Chat>test</Chat>
   </React.StrictMode>,
   document.getElementById('root')
 );
