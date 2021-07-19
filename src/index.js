@@ -8,12 +8,13 @@ import { Nav } from './components/Nav';
 import Forum from './routes/Forum.js';
 import EditInfo from './routes/EditInfo.js';
 import Chat from './routes/Chat.js';
+import {BrowserRouter} from 'react-router-dom';
 // <App />
 
 ReactDOM.render(
-  <React.StrictMode>
-   <Chat>test</Chat>
-  </React.StrictMode>,
+  <BrowserRouter>
+   <App>test</App>
+  </BrowserRouter>,
   document.getElementById('root')
 );
 

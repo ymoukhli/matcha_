@@ -15,7 +15,7 @@ export const Chat = () => {
                 </div>
             </form>
         </div>
-        )
+    )
 }
 
 export default Chat;

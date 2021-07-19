@@ -19,7 +19,6 @@ export const LoginOverlay = function(props) {
 
     function validateForm(event)
     {
-      event.preventDefault();
 
       console.log("submitttted");
       let formata = new FormData(document.getElementById("loginForm"))
