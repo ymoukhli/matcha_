@@ -12,43 +12,64 @@ function onClickOutside(e, props) {
 
 export const SignupOverlay = function (props) {
 
-  let [message, SetMessage] = useState("");
+  let [userNameMSG, SetUserNameMessage] = useState("");
+  let [emailMSG, SetEmailMessage] = useState("");
+  let passwordMsg = `password should be from 5 to 20 character, only . and _ are allowed`;
+  let firstNameMsg = `first name should be from 5 to 20 character, only . and _ are allowed`;
+  let lastNameMsg = `last name should be from 5 to 20 character, only . and _ are allowed`;
   let [userError, SetuserError] = useState(false);
   let [passError, SetpassError] = useState(false);
+  let [firstNameError, SetfirstNameError] = useState(false);
+  let [lastNameError, SetlastNameError] = useState(false);
+  // let [passError, SetpassError] = useState(false);
 
   function validateForm(event) {
-    // event.preventDefault();
+    //event.preventDefault();
     let formata = new FormData(document.getElementById("loginForm"))
 
     let userName = formata.get('userName');
     let passWord = formata.get('passWord');
+    let firstName = formata.get('firstName');
+    let lastName = formata.get('lastName');
     let patern = new RegExp(`^(?=.{5,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$`);
     let passwordPatern = new RegExp(`^(?=.{5,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$`);
 
-    // add message handler
+    //last name check
+    if (patern.test(lastName))
+    {
+      SetlastNameError(false);
+    }
+    else
+    {
+      SetlastNameError(true);
+      event.preventDefault();
+    }
+    //firstName check
+    if (patern.test(firstName))
+    {
+      SetfirstNameError(false);
+    }
+    else
+    {
+      SetfirstNameError(true);
+      event.preventDefault();
+    }
+    //user name check
     if (patern.test(userName)) {
       SetuserError(false);
     }
     else {
       SetuserError(true);
-      if (userName.length > 20 || userName.length < 5) {
-        SetMessage(`user name should be from 5 to 20 character`);
-      }
-      else {
-        SetMessage(`only '.' and '_' are alowed. no symbol should be at the end at the start no consucitive symblos`);
-      }
+      SetUserNameMessage(`user name should be from 5 to 20 character, only . and _ are allowed`)
+      event.preventDefault();
     }
+    //password check
     if (passwordPatern.test(passWord)) {
       SetpassError(false);
     }
     else {
       SetpassError(true);
-      if (passWord.length > 20 || passWord.length < 5) {
-        SetMessage(`password should be from 5 to 20 character`);
-      }
-      else {
-        SetMessage(`only '.' and '_' are alowed. no symbol should be at the end at the start no consucitive symblos`);
-      }
+      event.preventDefault();
     }
   }
 
@@ -57,8 +78,10 @@ export const SignupOverlay = function (props) {
     <div className={signin.Overlay}>
       <button className={signin.backBtn} onClick={() => props.onClick(false)}>X</button>
       <div className={signin.Center}>
-        {userError && <div className={style.error}>{message}</div>}
-        {passError && <div className={style.error}>{message}</div>}
+        {userError && <div className={style.error}>{userNameMSG}</div>}
+        {passError && <div className={style.error}>{passwordMsg}</div>}
+        {firstNameError && <div className={style.error}>{firstNameMsg}</div>}
+        {lastNameError && <div className={style.error}>{lastNameMsg}</div>}
         <h2 className={signin.h2}>Create your account</h2>
         <form className={signin.Center} action="http://localhost:3001/user" id="loginForm" method="Post" onSubmit={(e) => validateForm(e)}>
 
